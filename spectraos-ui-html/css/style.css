@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    background: #1b1b1b;
+    color: #00ffcc;
+    font-family: monospace;
+}
+
+#splash {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    color: #00ffcc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.boot-text {
+    font-size: 1.2em;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 0.2; }
+    50% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+
+#desktop {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#121212, #1b1b1b);
+}
+
+#cmd-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 64px;
+    cursor: pointer;
+}
+
+#shutdown {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background: red;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#terminal {
+    position: absolute;
+    top: 80px;
+    left: 100px;
+    width: 600px;
+    height: 400px;
+    background: black;
+    border: 2px solid #00ffcc;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+.terminal-header {
+    background: #00ffcc;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#terminal-output {
+    flex: 1;
+    background: black;
+    color: #00ffcc;
+    border: none;
+    padding: 10px;
+    resize: none;
+}
+
+#terminal-input {
+    border: none;
+    padding: 10px;
+    background: #111;
+    color: #00ffcc;
+    width: 100%;
+}
