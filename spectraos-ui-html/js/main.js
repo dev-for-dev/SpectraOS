@@ -85,7 +85,7 @@ window.onload = () => {
             const introLines = [
                 'SpectraOS (versão 1.0.2025.alpha)',
                 '© 2025 - EchoByte Research Division',
-                '',
+                '\n',
                 promptText
             ];
 
@@ -146,20 +146,29 @@ window.onload = () => {
                     return '[elevate] EchoByte Access Level: DELTA-VIOLET';
                 case 'help':
                     return `[help] Comandos disponíveis:
- - scan       : Varredura de rede
- - trace      : Rastrear pacotes
- - link -q    : Acessar QuantumNet
+ - cl         : Limpa o terminal
+ - clear      : Limpa o terminal
  - echoid     : Ver identidade de EchoByte
  - elevate    : Acesso avançado
  - help       : Mostrar comandos
+ - link -q    : Acessar QuantumNet
+ - restart    : Reiniciar sistema
+ - scan       : Varredura de rede
  - shutdown   : Desligar sistema
- - restart    : Reiniciar sistema`;
+ - trace      : Rastrear pacotes`;
+
                 case 'shutdown':
                     setTimeout(() => alert('Sistema desligando...'), 100);
                     return '[shutdown] Encerrando sessão...';
                 case 'restart':
                     setTimeout(() => location.reload(), 100);
                     return '[restart] Reiniciando sistema...';
+                case 'clear':
+                case 'cl':
+                    terminal.innerHTML = '';
+                    commandStartIndex = 0;
+
+                    return '';
                 default:
                     return `[erro] Comando desconhecido: ${cmd}`;
             }
