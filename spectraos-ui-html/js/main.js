@@ -42,6 +42,16 @@ window.onload = () => {
         desktop.appendChild(restartBtn);
     }, 3000);
 
+    document.querySelectorAll('.app-btn').forEach(btn => {
+        btn.onclick = () => {
+            if (btn.textContent === 'Terminal') {
+                cmdIcon.click(); // reutiliza seu comando já criado para abrir o terminal
+                startMenu.classList.add('hidden');
+            }
+            // Se quiser outros apps, pode expandir aqui
+        };
+    });
+
     shutdownBtn.onclick = shutdownEffect;
 
     cmdIcon.onclick = () => {
@@ -238,6 +248,46 @@ window.onload = () => {
 
         initTerminal();
     };
+    const startButton = document.getElementById('start-button');
+    const startMenu = document.getElementById('start-menu');
+    const powerBtn = document.getElementById('power-btn');
+    const powerOptions = document.getElementById('power-options');
+    const shutdownBtnMenu = document.getElementById('shutdown-btn');
+    const restartBtnMenu = document.getElementById('restart-btn');
+    const lockBtnMenu = document.getElementById('lock-btn');
+
+    // Toggle menu iniciar
+    startButton.onclick = () => {
+        startMenu.classList.toggle('hidden');
+        powerOptions.classList.add('hidden'); // esconde opções de energia inicialmente
+    };
+
+    // Toggle opções de energia
+    powerBtn.onclick = () => {
+        powerOptions.classList.toggle('hidden');
+    };
+
+    // Funções dos botões energia
+    shutdownBtnMenu.onclick = () => {
+        shutdownEffect();  // você já tem essa função no seu código
+        startMenu.classList.add('hidden');
+    };
+
+    restartBtnMenu.onclick = () => {
+        location.reload();
+    };
+
+    lockBtnMenu.onclick = () => {
+        alert('Tela bloqueada!'); // Você pode implementar bloqueio real se quiser
+    };
+
+    // Fechar menu se clicar fora
+    document.addEventListener('click', (e) => {
+        if (!startMenu.contains(e.target) && !startButton.contains(e.target)) {
+            startMenu.classList.add('hidden');
+            powerOptions.classList.add('hidden');
+        }
+    });
 };
 
 function dragElement(elmnt) {

@@ -10,10 +10,34 @@
     <div class="logo">SpectraOS</div>
     <div class="boot-text">Inicializando EchoKernel...</div>
 </div>
-
 <div id="desktop" class="hidden">
     <img src="assets/cmd-icon.png" id="cmd-icon" title="Abrir Terminal" />
     <button id="shutdown">Desligar</button>
+
+    <!-- Barra de tarefas -->
+    <div id="taskbar">
+        <button id="start-button" title="Menu Iniciar">☰</button>
+        <!-- Aqui pode ter mais itens da barra -->
+    </div>
+
+    <!-- Menu iniciar oculto -->
+    <div id="start-menu" class="hidden">
+        <input type="text" id="search-input" placeholder="Pesquisar..." />
+        <div id="apps-list">
+            <!-- Ícones dos apps -->
+            <button class="app-btn">Terminal</button>
+            <button class="app-btn">Configurações</button>
+            <button class="app-btn">Explorador</button>
+            <!-- Adicione os que quiser -->
+        </div>
+        <hr />
+        <div id="power-options" class="hidden">
+            <button id="shutdown-btn">Desligar</button>
+            <button id="restart-btn">Reiniciar</button>
+            <button id="lock-btn">Bloquear</button>
+        </div>
+        <button id="power-btn">Opções de energia</button>
+    </div>
 </div>
 
 <script src="js/main.js"></script>

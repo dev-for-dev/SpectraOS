@@ -42,6 +42,104 @@ body {
     background: linear-gradient(#121212, #1b1b1b);
 }
 
+#taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: #222;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow: 0 -1px 5px rgba(0,0,0,0.7);
+    z-index: 10000;
+}
+
+#start-button {
+    background: #00ffcc;
+    border: none;
+    color: black;
+    font-size: 20px;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#start-menu {
+    position: fixed;
+    bottom: 40px; /* fica acima da barra */
+    left: 10px;
+    width: 300px;
+    background: #111;
+    color: white;
+    border: 1px solid #00ffcc;
+    border-radius: 6px;
+    box-shadow: 0 0 15px #00ffcc;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 15000;
+}
+
+#start-menu.hidden {
+    display: none;
+}
+
+#search-input {
+    padding: 5px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    outline: none;
+}
+
+#apps-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.app-btn {
+    flex: 1 1 30%;
+    background: #222;
+    border: 1px solid #00ffcc;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#power-btn {
+    background: #333;
+    color: #00ffcc;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#power-options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#power-options button {
+    background: #222;
+    border: 1px solid #00ffcc;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
 #cmd-icon {
     position: absolute;
     top: 20px;
